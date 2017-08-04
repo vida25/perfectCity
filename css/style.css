@@ -1,0 +1,17 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.container p {
+  text-indent: 20px;
+}
+
+header h1 {
+  text-align: center;
+}
+
+.example-img {
+  text-align: center;
+}
+

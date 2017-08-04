@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfect city</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class='container'>
+      <article>
+        <header>
+          <h1>Description</h1>
+          <hr>
+        </header>
+        <p>
+          Consider a city where the streets are perfectly laid out to form an infinite square grid. In this city finding the shortest path between two given points (an origin and a destination) is much easier than in other more complex cities. Your task is to create an algorithm that does this calculation.
+        </p>
+        <p>See city-map.png</p>
+        <p>
+          <figure class='example-img'>
+            <img src="img/city-map.png" alt="city-map">
+            <figcaption>city-map.png</figcaption>
+          </figure>
+        </p>
+        <p>
+        Given user's departure and destination coordinates, each of them located on some street, find the length of the shortest route between them assuming that cars can only move along the streets. Each street can be represented as a straight line defined by the x = n or y = n formula, where n is an integer.
+        </p>
+      </article>
+      <article>
+        <header>
+          <h1>Example</h1>
+          <hr>
+        </header>
+        <p>
+          For departure = [0.4, 1] and destination = [0.9, 3], the output should be perfectCity(departure, destination) = 2.7.
+        </p>
+        <p>
+          0.6 + 2 + 0.1 = 2.7, which is the answer.
+        </p>
+      </article>
+      <article>
+        <header>
+          <h1>Guaranties</h1>
+          <hr>
+        </header>
+        <p>An array [x, y] of x and y coordinates. It is guaranteed that at least one coordinate is integer.</p>
+        <p>0.0 ≤ departure[i] ≤ 10.0.</p>
+        <p>0.0 ≤ destination[i] ≤ 10.0.</p>
+      </article>
+      <article>
+        <header>
+          <h1>Solution</h1>
+          <hr>
+        </header>
+        <div>
+          <p>Use "," or ";" or ":" or " " as the delimiter between coordinates</p>
+          <label for="departure">departure <input type="text" id='departure' value='0.4  1'></label>
+          <label for="destination">destination <input type="text" id='destination' value='0.9  3'></label>
+          <button id='calculate'>Calculate</button>
+          <p id='output'></p>
+          <br/>
+        </div>
+      </article>
+  </div>
+<script src='js/perfectCity.js'></script>
+</body>
+</html>
