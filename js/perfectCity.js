@@ -8,31 +8,33 @@
 
       // calculates the length of shortest way;
     function perfectCity(departure, destination) {
-      if (departure[0] < destination[0]) {
+      let result = 0;
+      if (departure[i] < destination[i]) {
         let t = departure;
         departure = destination;
         destination = t;
       }
-        let dx1;
-        let dx2;
-        let dx12;
-      if (Math.floor(departure[0]) === Math.floor(destination[0])) {
-        dx1 = Math.ceil(departure[0]) - departure[0];
-        dx2 = Math.ceil(destination[0]) - destination[0];
-        dx12 = dx1 + dx2;
-        if (dx12 > 1) {
-          dx12 = 2 - dx12;
+      for (var i = 0; i < 2; i++) {
+          let d1;
+          let d2;
+          let d12;
+        if (Math.floor(departure[i]) === Math.floor(destination[i])) {
+          d1 = Math.ceil(departure[i]) - departure[i];
+          d2 = Math.ceil(destination[i]) - destination[i];
+          d12 = d1 + d2;
+          if (d12 > 1) {
+            d12 = 2 - d12;
+          }
+        } else {
+          d1 = Math.ceil(departure[i]) - departure[i];
+          d2 = destination[i] - Math.floor(destination[i]);
+          d12 = d1 + d2;
         }
-      } else {
-        dx1 = Math.ceil(departure[0]) - departure[0];
-        dx2 = destination[0] - Math.floor(destination[0]);
-        dx12 = dx1 + dx2;
+
+        let d = Math.abs(Math.floor(destination[i]) - Math.floor(departure[i]));
+        result += (d + d12);
       }
-
-      let dx = Math.abs(Math.floor(destination[0]) - Math.floor(departure[0]));
-      let dy = Math.abs(departure[1] - destination[1]);
-
-      return  dx12 + dx + dy;
+      return result;
     }
 
     function getCoordinates(elem) {
